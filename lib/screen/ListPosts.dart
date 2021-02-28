@@ -9,7 +9,7 @@ class ListPosts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 14,
+      itemCount: posts.length,
       itemBuilder: (BuildContext context, int index) {
         return Container(
           child: Center(
@@ -22,13 +22,13 @@ class ListPosts extends StatelessWidget {
                     child: FlatButton(
                       onPressed: () => {
                         Navigator.pushNamed(context, '/post'),
-                        fetchPost(id)
+                        fetchPost(posts[index]['id'])
                       },
                       child: Column(
                         children: [
                           Expanded(
                             child: Text(
-                              "Flag 423",
+                              posts[index]['title'],
                               style: TextStyle(
                                 fontSize: 30.0,
                                 color: Colors.red,
@@ -36,7 +36,9 @@ class ListPosts extends StatelessWidget {
                             ),
                           ),
                           Expanded(
-                            child: Text("dfs"),
+                            child: Text(
+                              posts[index]['title'],
+                            ),
                           ),
                         ],
                       ),

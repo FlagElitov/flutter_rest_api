@@ -22,38 +22,47 @@ class DisplayPost extends StatelessWidget {
           )
         ],
       ),
-      body: Center(
-        child: Row(
-          children: [
-            Expanded(
-              child: Text(
-                "id:45352",
-                style: TextStyle(
-                  fontSize: 30.0,
-                  color: Colors.yellow,
-                ),
+      body: ListView.builder(
+        // itemCount: posts.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Card(
+                    child: Container(
+                      height: 70,
+                      child: FlatButton(
+                        onPressed: () => {
+                          Navigator.pushNamed(context, '/post'),
+                        },
+                        child: Column(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                "id",
+                                style: TextStyle(
+                                  fontSize: 30.0,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Text(
+                                "title",
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
-            Expanded(
-              child: Text(
-                "Title:fgdrga",
-                style: TextStyle(
-                  fontSize: 30.0,
-                  color: Colors.yellow,
-                ),
-              ),
-            ),
-            Expanded(
-              child: Text(
-                "Body:kdfakf dafj afj ajfdkljfksl",
-                style: TextStyle(
-                  fontSize: 30.0,
-                  color: Colors.yellow,
-                ),
-              ),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
