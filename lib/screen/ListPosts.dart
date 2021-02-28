@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-
 class ListPosts extends StatelessWidget {
   final fetchPost;
-  final counter;
-  const ListPosts({Key key, this.fetchPost, this.counter}) : super(key: key);
+  final posts;
+  final int id;
+  ListPosts({Key key, this.fetchPost, this.id, this.posts}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,10 @@ class ListPosts extends StatelessWidget {
                   child: Container(
                     height: 70,
                     child: FlatButton(
-                      onPressed: () =>
-                          {Navigator.pushNamed(context, '/post'), fetchPost()},
+                      onPressed: () => {
+                        Navigator.pushNamed(context, '/post'),
+                        fetchPost(id)
+                      },
                       child: Column(
                         children: [
                           Expanded(

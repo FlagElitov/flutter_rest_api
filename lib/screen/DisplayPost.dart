@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rest_api/models/models.dart';
 
 // ignore: must_be_immutable
 class DisplayPost extends StatelessWidget {
-  final fetchPost;
-  int id;
-  DisplayPost({Key key, this.id, this.fetchPost}) : super(key: key);
+  final Post posts;
+
+  DisplayPost({Key key, this.posts}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TODO app'),
+        title: Text('Flutter + RestAPI'),
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
-            tooltip: 'Open shopping cart',
             onPressed: () {
               Navigator.of(context)
                   .pushNamedAndRemoveUntil('/', ModalRoute.withName('/'));
@@ -22,12 +22,12 @@ class DisplayPost extends StatelessWidget {
           )
         ],
       ),
-      body: Container(
-        child: Column(
+      body: Center(
+        child: Row(
           children: [
             Expanded(
               child: Text(
-                "id:$id",
+                "id:45352",
                 style: TextStyle(
                   fontSize: 30.0,
                   color: Colors.yellow,
@@ -36,7 +36,7 @@ class DisplayPost extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                "id:$id",
+                "Title:fgdrga",
                 style: TextStyle(
                   fontSize: 30.0,
                   color: Colors.yellow,
@@ -45,7 +45,7 @@ class DisplayPost extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                "id:$id",
+                "Body:kdfakf dafj afj ajfdkljfksl",
                 style: TextStyle(
                   fontSize: 30.0,
                   color: Colors.yellow,
